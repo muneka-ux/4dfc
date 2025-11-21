@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<!-- saved from url=(0160)https://www.genspark.ai/api/code_sandbox_light/preview/8843dc06-37ba-46c7-8976-45bdd5992aa0/index_v2.html?canvas_history_id=acd2e66f-dcd6-4dd2-8ec7-3d35287256cf -->
-<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4DKanKan Meta導入 収益シミュレーション</title>
-    <link href="./4DKanKan Meta導入 収益シミュレーション_files/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./4DKanKan Meta導入 収益シミュレーション_files/all.min.css">
-    <script src="./4DKanKan Meta導入 収益シミュレーション_files/bootstrap.bundle.min.js.ダウンロード"></script>
-    <script src="./4DKanKan Meta導入 収益シミュレーション_files/chart.js.ダウンロード"></script>
+    <title>3Dスキャンカメラ フランチャイズ 収益シミュレーション</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
             font-family: 'Noto Sans JP', sans-serif;
@@ -1288,21 +1288,21 @@
         }
     </style>
 </head>
-<body class="">
+<body>
     <div class="container-fluid py-3">
         <!-- タイトル編集エリア -->
         <div class="title-section no-print">
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px;">
                 <div style="display: flex; align-items: center; gap: 20px; flex: 1; justify-content: center;">
-                    <img src="./4DKanKan Meta導入 収益シミュレーション_files/a6b4067ce8c7421b26024739b57a48bf" style="height: 50px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));" alt="JIBANNET">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/a6b4067ce8c7421b26024739b57a48bf" style="height: 50px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));" alt="JIBANNET">
                     <span style="font-size: 24px; color: #ccc;">×</span>
-                    <img src="./4DKanKan Meta導入 収益シミュレーション_files/fcff683fd5bad14182bbe7892db796ad" style="height: 45px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));" alt="4DKanKan Meta">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/fcff683fd5bad14182bbe7892db796ad" style="height: 45px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));" alt="4DKanKan Meta">
                 </div>
                 <div style="display: flex; gap: 10px;">
                     <button class="btn btn-success btn-sm" onclick="exportData()" title="データを保存">
                         <i class="fas fa-download"></i> 保存
                     </button>
-                    <button class="btn btn-primary btn-sm" onclick="document.getElementById(&#39;importFile&#39;).click()" title="データを読み込む">
+                    <button class="btn btn-primary btn-sm" onclick="document.getElementById('importFile').click()" title="データを読み込む">
                         <i class="fas fa-upload"></i> 読込
                     </button>
                     <input type="file" id="importFile" accept=".json" style="display: none;" onchange="importData(event)">
@@ -1314,37 +1314,37 @@
         <!-- 印刷用タイトル -->
         <div class="text-center mb-4" id="printTitle" style="display:none;">
             <div style="display: inline-flex; align-items: center; gap: 15px; margin-bottom: 10px;">
-                <img src="./4DKanKan Meta導入 収益シミュレーション_files/a6b4067ce8c7421b26024739b57a48bf" style="height: 35px;" alt="JIBANNET">
+                <img src="https://page.gensparksite.com/v1/base64_upload/a6b4067ce8c7421b26024739b57a48bf" style="height: 35px;" alt="JIBANNET">
                 <span style="font-size: 20px; color: #999;">×</span>
-                <img src="./4DKanKan Meta導入 収益シミュレーション_files/fcff683fd5bad14182bbe7892db796ad" style="height: 30px;" alt="4DKanKan Meta">
+                <img src="https://page.gensparksite.com/v1/base64_upload/fcff683fd5bad14182bbe7892db796ad" style="height: 30px;" alt="4DKanKan Meta">
             </div>
-            <h1 style="font-size: 20px;"><span id="printTitleText">4DKanKan Meta導入 収益シミュレーション</span></h1>
+            <h1 style="font-size: 20px;"><span id="printTitleText">4DKanKan Meta フランチャイズ 収益シミュレーション</span></h1>
         </div>
         
         <!-- タブナビゲーション -->
         <ul class="nav nav-tabs no-print" id="mainTabs" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings" type="button" role="tab" aria-selected="true">
+                <button class="nav-link active" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings" type="button" role="tab">
                     <i class="fas fa-cog"></i> 初期設定・料金表
                 </button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="edit-simulation-tab" data-bs-toggle="tab" data-bs-target="#editSimulation" type="button" role="tab" aria-selected="false" tabindex="-1">
+                <button class="nav-link" id="edit-simulation-tab" data-bs-toggle="tab" data-bs-target="#editSimulation" type="button" role="tab">
                     <i class="fas fa-edit"></i> シミュレーション編集
                 </button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="simulation-tab" data-bs-toggle="tab" data-bs-target="#simulation" type="button" role="tab" aria-selected="false" tabindex="-1">
+                <button class="nav-link" id="simulation-tab" data-bs-toggle="tab" data-bs-target="#simulation" type="button" role="tab">
                     <i class="fas fa-calculator"></i> 24ヶ月収益シミュレーション
                 </button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="summary-tab" data-bs-toggle="tab" data-bs-target="#summary" type="button" role="tab" aria-selected="false" tabindex="-1">
+                <button class="nav-link" id="summary-tab" data-bs-toggle="tab" data-bs-target="#summary" type="button" role="tab">
                     <i class="fas fa-chart-pie"></i> サマリー・分析
                 </button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="comparison-tab" data-bs-toggle="tab" data-bs-target="#comparison" type="button" role="tab" aria-selected="false" tabindex="-1">
+                <button class="nav-link" id="comparison-tab" data-bs-toggle="tab" data-bs-target="#comparison" type="button" role="tab">
                     <i class="fas fa-balance-scale"></i> シナリオ比較
                 </button>
             </li>
@@ -1352,20 +1352,20 @@
 
         <div class="tab-content" id="mainTabsContent">
             <!-- 初期設定・料金表タブ -->
-            <div class="tab-pane fade print-a4-portrait active show" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+            <div class="tab-pane fade show active print-a4-portrait" id="settings" role="tabpanel">
                 <!-- 企業名表示（印刷用） -->
                 <div class="text-center mt-2">
-                    <h4 id="settingsCompanyName" class="text-primary">【 株式会社シムラ 様 専用シミュレーション 】</h4>
+                    <h4 id="settingsCompanyName" class="text-primary"></h4>
                 </div>
                 
                 <!-- カメラ紹介カード -->
                 <div class="card mb-4" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); border: 2px solid rgba(102, 126, 234, 0.3); position: relative; overflow: hidden;">
-                    <img src="./4DKanKan Meta導入 収益シミュレーション_files/ff4c01eade0c35b7051065493fbf2fa7" style="position: absolute; right: -50px; top: 50%; transform: translateY(-50%); height: 200px; opacity: 0.15; z-index: 0;" alt="4DKanKan Meta Camera">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/ff4c01eade0c35b7051065493fbf2fa7" style="position: absolute; right: -50px; top: 50%; transform: translateY(-50%); height: 200px; opacity: 0.15; z-index: 0;" alt="4DKanKan Meta Camera">
                     <div class="card-body" style="position: relative; z-index: 1;">
                         <div class="row align-items-center">
                             <div class="col-md-8">
                                 <div class="d-flex align-items-center mb-3">
-                                    <img src="./4DKanKan Meta導入 収益シミュレーション_files/a6b4067ce8c7421b26024739b57a48bf" style="height: 50px; margin-right: 15px;" alt="JIBANNET">
+                                    <img src="https://page.gensparksite.com/v1/base64_upload/a6b4067ce8c7421b26024739b57a48bf" style="height: 50px; margin-right: 15px;" alt="JIBANNET">
                                     <div>
                                         <h4 style="color: #667eea; font-weight: bold; margin-bottom: 5px;">
                                             <i class="fas fa-video"></i> 4DKanKan Meta カメラシステム
@@ -1383,7 +1383,7 @@
                                 </p>
                             </div>
                             <div class="col-md-4 text-center">
-                                <img src="./4DKanKan Meta導入 収益シミュレーション_files/ff4c01eade0c35b7051065493fbf2fa7" style="max-width: 100%; height: auto; max-height: 150px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));" alt="4DKanKan Meta Camera">
+                                <img src="https://page.gensparksite.com/v1/base64_upload/ff4c01eade0c35b7051065493fbf2fa7" style="max-width: 100%; height: auto; max-height: 150px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));" alt="4DKanKan Meta Camera">
                             </div>
                         </div>
                     </div>
@@ -1411,7 +1411,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label"><input type="text" id="totalInitialInvestmentLabel" class="form-control form-control-sm mb-1" value="合計初期投資" style="font-weight:bold; background:#e7f3ff;"></label>
-                                    <input type="text" id="totalInitialInvestment" class="form-control calculated" readonly="">
+                                    <input type="text" id="totalInitialInvestment" class="form-control calculated" readonly>
                                 </div>
                             </div>
                         </div>
@@ -1437,7 +1437,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label"><input type="text" id="totalMonthlyFixedCostLabel" class="form-control form-control-sm mb-1" value="合計月額固定費" style="font-weight:bold; background:#fff8e1;"></label>
-                                    <input type="text" id="totalMonthlyFixedCost" class="form-control calculated" readonly="">
+                                    <input type="text" id="totalMonthlyFixedCost" class="form-control calculated" readonly>
                                 </div>
                             </div>
                         </div>
@@ -1481,9 +1481,9 @@
             </div>
 
             <!-- シミュレーション編集タブ（新規追加） -->
-            <div class="tab-pane fade" id="editSimulation" role="tabpanel" aria-labelledby="edit-simulation-tab">
+            <div class="tab-pane fade" id="editSimulation" role="tabpanel">
                 <div class="text-center mt-2">
-                    <h4 id="editSimulationCompanyName" class="text-primary">【 株式会社シムラ 様 専用シミュレーション 】</h4>
+                    <h4 id="editSimulationCompanyName" class="text-primary"></h4>
                 </div>
                 
                 <!-- 印刷用ヘッダー -->
@@ -1517,449 +1517,9 @@
                                     <th>累積利益</th>
                                 </tr>
                             </thead>
-                            <tbody id="editSimulationTableBody"><tr>
-                    <td>1ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(0, 0, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(0, 1, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(0, 2, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(0, 3, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(0, 4, this.value)"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥0</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated negative">¥-20,000</td>
-                    <td class="calculated negative">¥-20,000</td>
-                </tr><tr>
-                    <td>2ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(1, 0, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(1, 1, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(1, 2, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(1, 3, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(1, 4, this.value)"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥0</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated negative">¥-20,000</td>
-                    <td class="calculated negative">¥-40,000</td>
-                </tr><tr>
-                    <td>3ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(2, 0, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(2, 1, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(2, 2, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(2, 3, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(2, 4, this.value)"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥0</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated negative">¥-20,000</td>
-                    <td class="calculated negative">¥-60,000</td>
-                </tr><tr>
-                    <td>4ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(3, 0, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(3, 1, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(3, 2, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(3, 3, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(3, 4, this.value)"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥0</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated negative">¥-20,000</td>
-                    <td class="calculated negative">¥-80,000</td>
-                </tr><tr>
-                    <td>5ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(4, 0, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(4, 1, this.value)"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateEditMonthlyData(4, 2, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(4, 3, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(4, 4, this.value)"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥300,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥300,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥280,000</td>
-                    <td class="calculated positive">¥200,000</td>
-                </tr><tr>
-                    <td>6ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(5, 0, this.value)"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateEditMonthlyData(5, 1, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(5, 2, this.value)"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateEditMonthlyData(5, 3, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(5, 4, this.value)"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥80,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥600,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥680,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥660,000</td>
-                    <td class="calculated positive">¥860,000</td>
-                </tr><tr>
-                    <td>7ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(6, 0, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(6, 1, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(6, 2, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(6, 3, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(6, 4, this.value)"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥0</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated negative">¥-20,000</td>
-                    <td class="calculated positive">¥840,000</td>
-                </tr><tr>
-                    <td>8ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(7, 0, this.value)"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateEditMonthlyData(7, 1, this.value)"></td>
-                    <td><input type="number" value="2" class="editable" onchange="updateEditMonthlyData(7, 2, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(7, 3, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(7, 4, this.value)"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥80,000</td>
-                    <td class="calculated">¥600,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥680,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥660,000</td>
-                    <td class="calculated positive">¥1,500,000</td>
-                </tr><tr>
-                    <td>9ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(8, 0, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(8, 1, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(8, 2, this.value)"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateEditMonthlyData(8, 3, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(8, 4, this.value)"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥600,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥600,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥580,000</td>
-                    <td class="calculated positive">¥2,080,000</td>
-                </tr><tr>
-                    <td>10ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(9, 0, this.value)"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateEditMonthlyData(9, 1, this.value)"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateEditMonthlyData(9, 2, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(9, 3, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(9, 4, this.value)"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥80,000</td>
-                    <td class="calculated">¥300,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥380,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥360,000</td>
-                    <td class="calculated positive">¥2,440,000</td>
-                </tr><tr>
-                    <td>11ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(10, 0, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(10, 1, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(10, 2, this.value)"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateEditMonthlyData(10, 3, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(10, 4, this.value)"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥600,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥600,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥580,000</td>
-                    <td class="calculated recovery-cell">¥3,020,000</td>
-                </tr><tr>
-                    <td>12ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(11, 0, this.value)"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateEditMonthlyData(11, 1, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(11, 2, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(11, 3, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(11, 4, this.value)"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥80,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥80,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥60,000</td>
-                    <td class="calculated positive">¥3,080,000</td>
-                </tr><tr class="summary-row">
-                        <td><strong>1年目合計</strong></td>
-                        <td><strong>0</strong></td>
-                        <td><strong>4</strong></td>
-                        <td><strong>4</strong></td>
-                        <td><strong>3</strong></td>
-                        <td><strong>0</strong></td>
-                        <td><strong>¥0</strong></td>
-                        <td><strong>¥320,000</strong></td>
-                        <td><strong>¥1,200,000</strong></td>
-                        <td><strong>¥1,800,000</strong></td>
-                        <td><strong>¥0</strong></td>
-                        <td><strong>¥3,320,000</strong></td>
-                        <td><strong>-¥240,000</strong></td>
-                        <td><strong>-¥0</strong></td>
-                        <td><strong>¥3,080,000</strong></td>
-                        <td><strong>¥3,080,000</strong></td>
-                    </tr><tr>
-                    <td>13ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(12, 0, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(12, 1, this.value)"></td>
-                    <td><input type="number" value="2" class="editable" onchange="updateEditMonthlyData(12, 2, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(12, 3, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(12, 4, this.value)"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥600,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥600,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥580,000</td>
-                    <td class="calculated positive">¥3,660,000</td>
-                </tr><tr>
-                    <td>14ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(13, 0, this.value)"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateEditMonthlyData(13, 1, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(13, 2, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(13, 3, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(13, 4, this.value)"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥80,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥80,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥60,000</td>
-                    <td class="calculated positive">¥3,720,000</td>
-                </tr><tr>
-                    <td>15ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(14, 0, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(14, 1, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(14, 2, this.value)"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateEditMonthlyData(14, 3, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(14, 4, this.value)"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥600,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥600,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥580,000</td>
-                    <td class="calculated positive">¥4,300,000</td>
-                </tr><tr>
-                    <td>16ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(15, 0, this.value)"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateEditMonthlyData(15, 1, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(15, 2, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(15, 3, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(15, 4, this.value)"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥80,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥80,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥60,000</td>
-                    <td class="calculated positive">¥4,360,000</td>
-                </tr><tr>
-                    <td>17ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(16, 0, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(16, 1, this.value)"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateEditMonthlyData(16, 2, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(16, 3, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(16, 4, this.value)"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥300,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥300,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥280,000</td>
-                    <td class="calculated positive">¥4,640,000</td>
-                </tr><tr>
-                    <td>18ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(17, 0, this.value)"></td>
-                    <td><input type="number" value="2" class="editable" onchange="updateEditMonthlyData(17, 1, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(17, 2, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(17, 3, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(17, 4, this.value)"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥160,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥160,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥140,000</td>
-                    <td class="calculated positive">¥4,780,000</td>
-                </tr><tr>
-                    <td>19ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(18, 0, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(18, 1, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(18, 2, this.value)"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateEditMonthlyData(18, 3, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(18, 4, this.value)"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥600,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥600,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥580,000</td>
-                    <td class="calculated positive">¥5,360,000</td>
-                </tr><tr>
-                    <td>20ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(19, 0, this.value)"></td>
-                    <td><input type="number" value="2" class="editable" onchange="updateEditMonthlyData(19, 1, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(19, 2, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(19, 3, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(19, 4, this.value)"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥160,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥160,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥140,000</td>
-                    <td class="calculated positive">¥5,500,000</td>
-                </tr><tr>
-                    <td>21ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(20, 0, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(20, 1, this.value)"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateEditMonthlyData(20, 2, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(20, 3, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(20, 4, this.value)"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥300,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥300,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥280,000</td>
-                    <td class="calculated positive">¥5,780,000</td>
-                </tr><tr>
-                    <td>22ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(21, 0, this.value)"></td>
-                    <td><input type="number" value="2" class="editable" onchange="updateEditMonthlyData(21, 1, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(21, 2, this.value)"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateEditMonthlyData(21, 3, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(21, 4, this.value)"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥160,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥600,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥760,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥740,000</td>
-                    <td class="calculated positive">¥6,520,000</td>
-                </tr><tr>
-                    <td>23ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(22, 0, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(22, 1, this.value)"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateEditMonthlyData(22, 2, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(22, 3, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(22, 4, this.value)"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥300,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥300,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥280,000</td>
-                    <td class="calculated positive">¥6,800,000</td>
-                </tr><tr>
-                    <td>24ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(23, 0, this.value)"></td>
-                    <td><input type="number" value="2" class="editable" onchange="updateEditMonthlyData(23, 1, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(23, 2, this.value)"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateEditMonthlyData(23, 3, this.value)"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateEditMonthlyData(23, 4, this.value)"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥160,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥600,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥760,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥740,000</td>
-                    <td class="calculated positive">¥7,540,000</td>
-                </tr><tr class="summary-row">
-                <td><strong>2年目合計</strong></td>
-                <td><strong>0</strong></td>
-                <td><strong>10</strong></td>
-                <td><strong>5</strong></td>
-                <td><strong>4</strong></td>
-                <td><strong>0</strong></td>
-                <td><strong>¥0</strong></td>
-                <td><strong>¥800,000</strong></td>
-                <td><strong>¥1,500,000</strong></td>
-                <td><strong>¥2,400,000</strong></td>
-                <td><strong>¥0</strong></td>
-                <td><strong>¥4,700,000</strong></td>
-                <td><strong>-¥240,000</strong></td>
-                <td><strong>-¥0</strong></td>
-                <td><strong>¥4,460,000</strong></td>
-                <td><strong>¥7,540,000</strong></td>
-            </tr></tbody>
+                            <tbody id="editSimulationTableBody">
+                                <!-- JavaScript で動的生成 -->
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -1978,9 +1538,9 @@
             </div>
             
             <!-- 24ヶ月収益シミュレーションタブ -->
-            <div class="tab-pane fade" id="simulation" role="tabpanel" aria-labelledby="simulation-tab">
+            <div class="tab-pane fade" id="simulation" role="tabpanel">
                 <div class="text-center mt-2">
-                    <h4 id="simulationCompanyName" class="text-primary">【 株式会社シムラ 様 専用シミュレーション 】</h4>
+                    <h4 id="simulationCompanyName" class="text-primary"></h4>
                 </div>
                 
                 <!-- 印刷用シナリオヘッダー -->
@@ -1994,13 +1554,13 @@
                         シナリオ: <span class="scenario-name" id="simulationScenarioName">現実的</span>
                     </div>
                     <div class="scenario-buttons">
-                        <button class="btn btn-success scenario-btn" onclick="switchScenario(&#39;optimistic&#39;)">
+                        <button class="btn btn-success scenario-btn" onclick="switchScenario('optimistic')">
                             <i class="fas fa-smile"></i> 楽観的
                         </button>
-                        <button class="btn btn-info scenario-btn active" onclick="switchScenario(&#39;realistic&#39;)">
+                        <button class="btn btn-info scenario-btn active" onclick="switchScenario('realistic')">
                             <i class="fas fa-chart-line"></i> 現実的
                         </button>
-                        <button class="btn btn-warning scenario-btn" onclick="switchScenario(&#39;pessimistic&#39;)">
+                        <button class="btn btn-warning scenario-btn" onclick="switchScenario('pessimistic')">
                             <i class="fas fa-frown"></i> 悲観的
                         </button>
                     </div>
@@ -2032,449 +1592,9 @@
                                     <th>累積利益</th>
                                 </tr>
                             </thead>
-                            <tbody id="simulationTableBody"><tr class="">
-                    <td>1ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(0, 0, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(0, 1, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(0, 2, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(0, 3, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(0, 4, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥0</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated negative">¥-20,000</td>
-                    <td class="calculated negative ">¥-20,000</td>
-                </tr><tr class="">
-                    <td>2ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(1, 0, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(1, 1, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(1, 2, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(1, 3, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(1, 4, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥0</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated negative">¥-20,000</td>
-                    <td class="calculated negative ">¥-40,000</td>
-                </tr><tr class="">
-                    <td>3ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(2, 0, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(2, 1, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(2, 2, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(2, 3, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(2, 4, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥0</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated negative">¥-20,000</td>
-                    <td class="calculated negative ">¥-60,000</td>
-                </tr><tr class="">
-                    <td>4ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(3, 0, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(3, 1, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(3, 2, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(3, 3, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(3, 4, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥0</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated negative">¥-20,000</td>
-                    <td class="calculated negative ">¥-80,000</td>
-                </tr><tr class="">
-                    <td>5ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(4, 0, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(4, 1, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateMonthlyData(4, 2, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(4, 3, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(4, 4, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥300,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥300,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥280,000</td>
-                    <td class="calculated positive ">¥200,000</td>
-                </tr><tr class="large-project-month">
-                    <td>6ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(5, 0, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateMonthlyData(5, 1, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(5, 2, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateMonthlyData(5, 3, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(5, 4, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥80,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥600,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥680,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥660,000</td>
-                    <td class="calculated positive ">¥860,000</td>
-                </tr><tr class="">
-                    <td>7ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(6, 0, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(6, 1, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(6, 2, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(6, 3, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(6, 4, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥0</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated negative">¥-20,000</td>
-                    <td class="calculated positive ">¥840,000</td>
-                </tr><tr class="">
-                    <td>8ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(7, 0, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateMonthlyData(7, 1, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="2" class="editable" onchange="updateMonthlyData(7, 2, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(7, 3, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(7, 4, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥80,000</td>
-                    <td class="calculated">¥600,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥680,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥660,000</td>
-                    <td class="calculated positive ">¥1,500,000</td>
-                </tr><tr class="large-project-month">
-                    <td>9ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(8, 0, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(8, 1, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(8, 2, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateMonthlyData(8, 3, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(8, 4, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥600,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥600,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥580,000</td>
-                    <td class="calculated positive ">¥2,080,000</td>
-                </tr><tr class="">
-                    <td>10ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(9, 0, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateMonthlyData(9, 1, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateMonthlyData(9, 2, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(9, 3, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(9, 4, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥80,000</td>
-                    <td class="calculated">¥300,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥380,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥360,000</td>
-                    <td class="calculated positive ">¥2,440,000</td>
-                </tr><tr class="large-project-month">
-                    <td>11ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(10, 0, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(10, 1, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(10, 2, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateMonthlyData(10, 3, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(10, 4, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥600,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥600,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥580,000</td>
-                    <td class="calculated positive recovery-cell">¥3,020,000</td>
-                </tr><tr class="">
-                    <td>12ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(11, 0, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateMonthlyData(11, 1, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(11, 2, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(11, 3, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(11, 4, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥80,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥80,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥60,000</td>
-                    <td class="calculated positive ">¥3,080,000</td>
-                </tr><tr class="summary-row">
-                        <td><strong>1年目合計</strong></td>
-                        <td><strong>0</strong></td>
-                        <td><strong>4</strong></td>
-                        <td><strong>4</strong></td>
-                        <td><strong>3</strong></td>
-                        <td><strong>0</strong></td>
-                        <td><strong>¥0</strong></td>
-                        <td><strong>¥320,000</strong></td>
-                        <td><strong>¥1,200,000</strong></td>
-                        <td><strong>¥1,800,000</strong></td>
-                        <td><strong>¥0</strong></td>
-                        <td><strong>¥3,320,000</strong></td>
-                        <td><strong>-¥240,000</strong></td>
-                        <td><strong>-¥0</strong></td>
-                        <td><strong>¥3,080,000</strong></td>
-                        <td><strong>¥3,080,000</strong></td>
-                    </tr><tr class="">
-                    <td>13ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(12, 0, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(12, 1, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="2" class="editable" onchange="updateMonthlyData(12, 2, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(12, 3, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(12, 4, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥600,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥600,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥580,000</td>
-                    <td class="calculated positive ">¥3,660,000</td>
-                </tr><tr class="">
-                    <td>14ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(13, 0, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateMonthlyData(13, 1, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(13, 2, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(13, 3, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(13, 4, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥80,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥80,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥60,000</td>
-                    <td class="calculated positive ">¥3,720,000</td>
-                </tr><tr class="large-project-month">
-                    <td>15ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(14, 0, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(14, 1, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(14, 2, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateMonthlyData(14, 3, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(14, 4, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥600,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥600,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥580,000</td>
-                    <td class="calculated positive ">¥4,300,000</td>
-                </tr><tr class="">
-                    <td>16ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(15, 0, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateMonthlyData(15, 1, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(15, 2, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(15, 3, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(15, 4, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥80,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥80,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥60,000</td>
-                    <td class="calculated positive ">¥4,360,000</td>
-                </tr><tr class="">
-                    <td>17ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(16, 0, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(16, 1, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateMonthlyData(16, 2, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(16, 3, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(16, 4, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥300,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥300,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥280,000</td>
-                    <td class="calculated positive ">¥4,640,000</td>
-                </tr><tr class="">
-                    <td>18ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(17, 0, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="2" class="editable" onchange="updateMonthlyData(17, 1, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(17, 2, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(17, 3, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(17, 4, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥160,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥160,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥140,000</td>
-                    <td class="calculated positive ">¥4,780,000</td>
-                </tr><tr class="large-project-month">
-                    <td>19ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(18, 0, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(18, 1, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(18, 2, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateMonthlyData(18, 3, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(18, 4, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥600,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥600,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥580,000</td>
-                    <td class="calculated positive ">¥5,360,000</td>
-                </tr><tr class="">
-                    <td>20ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(19, 0, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="2" class="editable" onchange="updateMonthlyData(19, 1, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(19, 2, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(19, 3, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(19, 4, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥160,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥160,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥140,000</td>
-                    <td class="calculated positive ">¥5,500,000</td>
-                </tr><tr class="">
-                    <td>21ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(20, 0, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(20, 1, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateMonthlyData(20, 2, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(20, 3, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(20, 4, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥300,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥300,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥280,000</td>
-                    <td class="calculated positive ">¥5,780,000</td>
-                </tr><tr class="large-project-month">
-                    <td>22ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(21, 0, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="2" class="editable" onchange="updateMonthlyData(21, 1, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(21, 2, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateMonthlyData(21, 3, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(21, 4, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥160,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥600,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥760,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥740,000</td>
-                    <td class="calculated positive ">¥6,520,000</td>
-                </tr><tr class="">
-                    <td>23ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(22, 0, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(22, 1, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateMonthlyData(22, 2, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(22, 3, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(22, 4, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥300,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥300,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥280,000</td>
-                    <td class="calculated positive ">¥6,800,000</td>
-                </tr><tr class="large-project-month">
-                    <td>24ヶ月目</td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(23, 0, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="2" class="editable" onchange="updateMonthlyData(23, 1, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(23, 2, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="1" class="editable" onchange="updateMonthlyData(23, 3, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td><input type="number" value="0" class="editable" onchange="updateMonthlyData(23, 4, this.value)" readonly="" style="background-color: #f8f9fa; cursor: not-allowed;"></td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥160,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated">¥600,000</td>
-                    <td class="calculated">¥0</td>
-                    <td class="calculated"><strong>¥760,000</strong></td>
-                    <td class="calculated expense-cell">-¥20,000</td>
-                    <td class="calculated expense-cell">-¥0</td>
-                    <td class="calculated positive">¥740,000</td>
-                    <td class="calculated positive ">¥7,540,000</td>
-                </tr><tr class="summary-row">
-                <td><strong>2年目合計</strong></td>
-                <td><strong>0</strong></td>
-                <td><strong>10</strong></td>
-                <td><strong>5</strong></td>
-                <td><strong>4</strong></td>
-                <td><strong>0</strong></td>
-                <td><strong>¥0</strong></td>
-                <td><strong>¥800,000</strong></td>
-                <td><strong>¥1,500,000</strong></td>
-                <td><strong>¥2,400,000</strong></td>
-                <td><strong>¥0</strong></td>
-                <td><strong>¥4,700,000</strong></td>
-                <td><strong>-¥240,000</strong></td>
-                <td><strong>-¥0</strong></td>
-                <td><strong>¥4,460,000</strong></td>
-                <td><strong>¥7,540,000</strong></td>
-            </tr></tbody>
+                            <tbody id="simulationTableBody">
+                                <!-- JavaScript で動的生成 -->
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -2493,14 +1613,14 @@
             </div>
 
             <!-- サマリー・分析タブ -->
-            <div class="tab-pane fade" id="summary" role="tabpanel" aria-labelledby="summary-tab">
+            <div class="tab-pane fade" id="summary" role="tabpanel">
                 <div class="text-center mt-2">
-                    <h4 id="summaryCompanyName" class="text-primary">【 株式会社シムラ 様 専用シミュレーション 】</h4>
+                    <h4 id="summaryCompanyName" class="text-primary"></h4>
                 </div>
                 
                 <!-- 印刷用シナリオヘッダー -->
                 <div class="scenario-print-header">
-                    <h2 id="summaryScenarioPrint" style="opacity: 0.3;">【 現実的シナリオ 】</h2>
+                    <h2 id="summaryScenarioPrint">【 現実的シナリオ 】</h2>
                 </div>
                 
                 <!-- シナリオ選択 -->
@@ -2509,13 +1629,13 @@
                         シナリオ: <span class="scenario-name" id="summaryScenarioName">現実的</span>
                     </div>
                     <div class="scenario-buttons">
-                        <button class="btn btn-success scenario-btn" onclick="switchScenario(&#39;optimistic&#39;)">
+                        <button class="btn btn-success scenario-btn" onclick="switchScenario('optimistic')">
                             <i class="fas fa-smile"></i> 楽観的
                         </button>
-                        <button class="btn btn-info scenario-btn active" onclick="switchScenario(&#39;realistic&#39;)">
+                        <button class="btn btn-info scenario-btn active" onclick="switchScenario('realistic')">
                             <i class="fas fa-chart-line"></i> 現実的
                         </button>
-                        <button class="btn btn-warning scenario-btn" onclick="switchScenario(&#39;pessimistic&#39;)">
+                        <button class="btn btn-warning scenario-btn" onclick="switchScenario('pessimistic')">
                             <i class="fas fa-frown"></i> 悲観的
                         </button>
                     </div>
@@ -2526,10 +1646,10 @@
                     <span class="print-option-label">印刷オプション：</span>
                     <span class="print-option-text">シナリオ名</span>
                     <label class="toggle-switch">
-                        <input type="checkbox" id="showScenarioNameToggle" checked="" onchange="toggleScenarioName()">
+                        <input type="checkbox" id="showScenarioNameToggle" checked onchange="toggleScenarioName()">
                         <span class="toggle-slider"></span>
                     </label>
-                    <span class="toggle-status" id="toggleStatus" style="color: rgb(244, 67, 54);">非表示</span>
+                    <span class="toggle-status" id="toggleStatus">表示</span>
                 </div>
                 
                 <div class="row mt-3">
@@ -2543,29 +1663,29 @@
                                     <div class="col-6">
                                         <div class="mb-3">
                                             <strong>初期投資額</strong><br>
-                                            <span class="summary-value" id="summaryInitialInvestment">¥3,000,000</span>
+                                            <span class="summary-value" id="summaryInitialInvestment">¥5,050,000</span>
                                         </div>
                                         <div class="mb-3">
                                             <strong>投資回収月</strong><br>
-                                            <span class="summary-value" id="summaryRecoveryMonth">11ヶ月目</span>
+                                            <span class="summary-value" id="summaryRecoveryMonth">22ヶ月目</span>
                                         </div>
                                         <div class="mb-3">
                                             <strong>回収時点の純利益</strong><br>
-                                            <span class="summary-value" id="summaryRecoveryProfit">¥20,000</span>
+                                            <span class="summary-value" id="summaryRecoveryProfit">¥0</span>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="mb-3">
                                             <strong>2年累積利益</strong><br>
-                                            <span class="summary-value" id="summaryTotalProfit">¥7,540,000</span>
+                                            <span class="summary-value" id="summaryTotalProfit">¥10,272,000</span>
                                         </div>
                                         <div class="mb-3">
                                             <strong>2年純利益</strong><br>
-                                            <span class="summary-value" id="summaryNetProfit">¥4,540,000</span>
+                                            <span class="summary-value" id="summaryNetProfit">¥5,222,000</span>
                                         </div>
                                         <div class="mb-3">
                                             <strong>投資回収率（2年）</strong><br>
-                                            <span class="summary-value" id="summaryROI">151%</span>
+                                            <span class="summary-value" id="summaryROI">202%</span>
                                         </div>
                                     </div>
                                 </div>
@@ -2581,31 +1701,31 @@
                                     <div class="col-6">
                                         <h6>1年目</h6>
                                         <div class="mb-2">
-                                            年間売上: <strong id="year1Sales">¥3,320,000</strong>
+                                            年間売上: <strong id="year1Sales">¥2,786,000</strong>
                                         </div>
                                         <div class="mb-2">
-                                            年間固定費: <strong id="year1FixedCost">¥240,000</strong>
+                                            年間固定費: <strong id="year1FixedCost">¥420,000</strong>
                                         </div>
                                         <div class="mb-2">
-                                            年間利益: <strong id="year1Profit">¥3,080,000</strong>
+                                            年間利益: <strong id="year1Profit">¥2,366,000</strong>
                                         </div>
                                         <div class="mb-2">
-                                            累積利益: <strong id="year1Cumulative">¥3,080,000</strong>
+                                            累積利益: <strong id="year1Cumulative">¥2,406,000</strong>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <h6>2年目</h6>
                                         <div class="mb-2">
-                                            年間売上: <strong id="year2Sales">¥4,700,000</strong>
+                                            年間売上: <strong id="year2Sales">¥8,216,000</strong>
                                         </div>
                                         <div class="mb-2">
-                                            年間固定費: <strong id="year2FixedCost">¥240,000</strong>
+                                            年間固定費: <strong id="year2FixedCost">¥420,000</strong>
                                         </div>
                                         <div class="mb-2">
-                                            年間利益: <strong id="year2Profit">¥4,460,000</strong>
+                                            年間利益: <strong id="year2Profit">¥7,796,000</strong>
                                         </div>
                                         <div class="mb-2">
-                                            累積利益: <strong id="year2Cumulative">¥7,540,000</strong>
+                                            累積利益: <strong id="year2Cumulative">¥10,272,000</strong>
                                         </div>
                                     </div>
                                 </div>
@@ -2619,13 +1739,13 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-6">
-                                        <div class="mb-2">3D測量（自社）: <strong id="totalSurvey3d">0件</strong></div>
-                                        <div class="mb-2">VR小規模: <strong id="totalVrSmall">14件</strong></div>
-                                        <div class="mb-2">VR中規模: <strong id="totalVrMedium">9件</strong></div>
+                                        <div class="mb-2">3D測量（自社）: <strong id="totalSurvey3d">107件</strong></div>
+                                        <div class="mb-2">VR小規模: <strong id="totalVrSmall">38件</strong></div>
+                                        <div class="mb-2">VR中規模: <strong id="totalVrMedium">5件</strong></div>
                                     </div>
                                     <div class="col-6">
-                                        <div class="mb-2">VR大規模: <strong id="totalVrLarge">7件</strong></div>
-                                        <div class="mb-2">本部案件: <strong id="totalHeadquarter">0件</strong></div>
+                                        <div class="mb-2">VR大規模: <strong id="totalVrLarge">2件</strong></div>
+                                        <div class="mb-2">本部案件: <strong id="totalHeadquarter">88件</strong></div>
                                     </div>
                                 </div>
                             </div>
@@ -2641,7 +1761,7 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="chart-container">
-                                            <canvas id="salesChart" style="box-sizing: border-box; display: block; height: 300px; width: 892.5px;" width="892" height="300"></canvas>
+                                            <canvas id="salesChart"></canvas>
                                         </div>
                                     </div>
                                 </div>
@@ -2653,7 +1773,7 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="chart-container">
-                                            <canvas id="profitChart" style="box-sizing: border-box; display: block; height: 300px; width: 892.5px;" width="892" height="300"></canvas>
+                                            <canvas id="profitChart"></canvas>
                                         </div>
                                     </div>
                                 </div>
@@ -2665,7 +1785,7 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="chart-container">
-                                            <canvas id="pieChart" style="box-sizing: border-box; display: block; height: 300px; width: 892.5px;" width="892" height="300"></canvas>
+                                            <canvas id="pieChart"></canvas>
                                         </div>
                                     </div>
                                 </div>
@@ -2688,9 +1808,9 @@
             </div>
 
             <!-- シナリオ比較タブ -->
-            <div class="tab-pane fade" id="comparison" role="tabpanel" aria-labelledby="comparison-tab">
+            <div class="tab-pane fade" id="comparison" role="tabpanel">
                 <div class="text-center mt-2 mb-4">
-                    <h4 id="comparisonCompanyName" class="text-primary">【 株式会社シムラ 様 専用シミュレーション 】</h4>
+                    <h4 id="comparisonCompanyName" class="text-primary"></h4>
                     <h3><i class="fas fa-balance-scale"></i> 3シナリオ比較分析</h3>
                 </div>
                 
@@ -2713,33 +1833,33 @@
                                     <tbody>
                                         <tr>
                                             <td><strong>投資回収月</strong></td>
-                                            <td class="scenario-optimistic" id="comp_recovery_optimistic">12ヶ月目</td>
-                                            <td class="scenario-realistic" id="comp_recovery_realistic">11ヶ月目</td>
-                                            <td class="scenario-pessimistic" id="comp_recovery_pessimistic">22ヶ月目</td>
+                                            <td class="scenario-optimistic" id="comp_recovery_optimistic">-</td>
+                                            <td class="scenario-realistic" id="comp_recovery_realistic">-</td>
+                                            <td class="scenario-pessimistic" id="comp_recovery_pessimistic">-</td>
                                         </tr>
                                         <tr>
                                             <td><strong>2年累積利益</strong></td>
-                                            <td class="scenario-optimistic" id="comp_total_optimistic">¥10,060,000</td>
-                                            <td class="scenario-realistic" id="comp_total_realistic">¥7,540,000</td>
-                                            <td class="scenario-pessimistic" id="comp_total_pessimistic">¥4,340,000</td>
+                                            <td class="scenario-optimistic" id="comp_total_optimistic">-</td>
+                                            <td class="scenario-realistic" id="comp_total_realistic">-</td>
+                                            <td class="scenario-pessimistic" id="comp_total_pessimistic">-</td>
                                         </tr>
                                         <tr>
                                             <td><strong>2年純利益</strong></td>
-                                            <td class="scenario-optimistic" id="comp_net_optimistic">¥7,060,000</td>
-                                            <td class="scenario-realistic" id="comp_net_realistic">¥4,540,000</td>
-                                            <td class="scenario-pessimistic" id="comp_net_pessimistic">¥1,340,000</td>
+                                            <td class="scenario-optimistic" id="comp_net_optimistic">-</td>
+                                            <td class="scenario-realistic" id="comp_net_realistic">-</td>
+                                            <td class="scenario-pessimistic" id="comp_net_pessimistic">-</td>
                                         </tr>
                                         <tr>
                                             <td><strong>投資回収率（ROI）</strong></td>
-                                            <td class="scenario-optimistic" id="comp_roi_optimistic">235%</td>
-                                            <td class="scenario-realistic" id="comp_roi_realistic">151%</td>
-                                            <td class="scenario-pessimistic" id="comp_roi_pessimistic">45%</td>
+                                            <td class="scenario-optimistic" id="comp_roi_optimistic">-</td>
+                                            <td class="scenario-realistic" id="comp_roi_realistic">-</td>
+                                            <td class="scenario-pessimistic" id="comp_roi_pessimistic">-</td>
                                         </tr>
                                         <tr>
                                             <td><strong>2年間総売上</strong></td>
-                                            <td class="scenario-optimistic" id="comp_sales_optimistic">¥10,540,000</td>
-                                            <td class="scenario-realistic" id="comp_sales_realistic">¥8,020,000</td>
-                                            <td class="scenario-pessimistic" id="comp_sales_pessimistic">¥4,820,000</td>
+                                            <td class="scenario-optimistic" id="comp_sales_optimistic">-</td>
+                                            <td class="scenario-realistic" id="comp_sales_realistic">-</td>
+                                            <td class="scenario-pessimistic" id="comp_sales_pessimistic">-</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -2756,7 +1876,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="chart-container" style="height: 400px;">
-                                    <canvas id="comparisonProfitChart" style="box-sizing: border-box; display: block; height: 0px; width: 0px;" width="0" height="0"></canvas>
+                                    <canvas id="comparisonProfitChart"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -2768,7 +1888,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="chart-container" style="height: 400px;">
-                                    <canvas id="comparisonSalesChart" style="box-sizing: border-box; display: block; height: 0px; width: 0px;" width="0" height="0"></canvas>
+                                    <canvas id="comparisonSalesChart"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -4071,7 +3191,5 @@
             }, 100);
         });
     </script>
-<script defer="" src="./4DKanKan Meta導入 収益シミュレーション_files/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;4edd5f8ec12a48cfa682ab8261b80a79&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
-
-
-</body></html>
+</body>
+</html>
