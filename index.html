@@ -1570,6 +1570,16 @@
                     <div class="alert alert-warning no-print" id="realisticReadonlyAlert" style="display: none;">
                         <i class="fas fa-lock"></i> 現実的シナリオのデータは「シミュレーション編集」タブで編集してください。こちらは読み取り専用です。
                     </div>
+                    <div class="alert alert-info no-print" id="resetButtonAlert" style="display: none;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <i class="fas fa-undo"></i> 現実的シナリオの数値をベースに調整できます。
+                            </div>
+                            <button class="btn btn-secondary btn-sm" onclick="resetToRealistic()">
+                                <i class="fas fa-sync-alt"></i> 現実的シナリオから再設定
+                            </button>
+                        </div>
+                    </div>
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-sm" id="simulationTable">
                             <thead class="table-dark">
@@ -2012,6 +2022,12 @@
                 alert.style.display = (scenario === 'realistic') ? 'block' : 'none';
             }
             
+            // リセットボタンの表示切り替え
+            const resetAlert = document.getElementById('resetButtonAlert');
+            if (resetAlert) {
+                resetAlert.style.display = (scenario === 'optimistic' || scenario === 'pessimistic') ? 'block' : 'none';
+            }
+            
             // ラベル更新
             const labels = {
                 'realistic': '現実的',
@@ -2034,6 +2050,22 @@
             document.getElementById('summaryScenarioPrint').textContent = `【 ${labelsFull[scenario]} 】`;
             
             calculate();
+        }
+
+        // 現実的シナリオから再設定
+        function resetToRealistic() {
+            if (!confirm('現在のシナリオを「現実的シナリオ」の数値で上書きします。\nよろしいですか？')) {
+                return;
+            }
+            
+            // 現実的シナリオのデータを現在のシナリオにコピー
+            scenarioData[currentScenario] = JSON.parse(JSON.stringify(scenarioData['realistic']));
+            
+            // 再計算
+            calculate();
+            
+            // 成功メッセージ
+            showMessage('success', '現実的シナリオの数値を反映しました。これをベースに調整できます。');
         }
 
         // 設定値取得
