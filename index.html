@@ -192,8 +192,14 @@
             font-size: 13px;
         }
         
-        /* 投資回収セルのテキストを確実に白にする */
+        /* 投資回収セルのテキストを確実に白にする（他のクラスより優先） */
+        .recovery-cell,
         .recovery-cell * {
+            color: white !important;
+        }
+        
+        /* positiveクラスより優先させる */
+        td.recovery-cell {
             color: white !important;
         }
         
@@ -1143,7 +1149,8 @@
                 color-adjust: exact !important;
             }
             
-            /* 投資回収セルの文字を確実に白にする */
+            /* 投資回収セルの文字を確実に白にする（他のクラスより優先） */
+            .recovery-cell,
             .recovery-cell * {
                 color: white !important;
                 -webkit-print-color-adjust: exact !important;
@@ -1151,8 +1158,16 @@
                 color-adjust: exact !important;
             }
             
-            /* プラス利益の緑色を印刷時も表示 */
-            .positive {
+            /* positiveクラスより優先させる */
+            td.recovery-cell {
+                color: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            /* プラス利益の緑色を印刷時も表示（投資回収セルは除く） */
+            .positive:not(.recovery-cell) {
                 color: #28a745 !important;
                 font-weight: bold !important;
                 -webkit-print-color-adjust: exact !important;
@@ -1168,12 +1183,11 @@
                 color-adjust: exact !important;
             }
             
-            /* 大規模案件の背景色を印刷時も表示 */
-            .large-project-month {
-                background-color: #d4edda !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-                color-adjust: exact !important;
+            /* 大規模案件の背景色を印刷時は非表示 */
+            tr.large-project-month,
+            tr.large-project-month td {
+                background-color: transparent !important;
+                color: black !important;
             }
             
             /* 費用セルの赤色を印刷時も表示 */
@@ -2209,7 +2223,7 @@
                     <td class="calculated expense-cell">-¥${formatNumber(monthlyFixedCost)}</td>
                     <td class="calculated expense-cell">-¥${formatNumber(survey3dCostTotal)}</td>
                     <td class="calculated ${monthlyProfit < 0 ? 'negative' : 'positive'}">¥${formatNumber(monthlyProfit)}</td>
-                    <td class="calculated ${cumulativeProfit < 0 ? 'negative' : 'positive'} ${isRecoveryMonth ? 'recovery-cell' : ''}">¥${formatNumber(cumulativeProfit)}</td>
+                    <td class="calculated ${isRecoveryMonth ? 'recovery-cell' : (cumulativeProfit < 0 ? 'negative' : 'positive')}">¥${formatNumber(cumulativeProfit)}</td>
                 `;
                 
                 tbody.appendChild(row);
